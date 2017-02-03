@@ -1,11 +1,22 @@
 var promise = require('bluebird');
+var gopt = require('./config');
 
 var options = {
     promiseLib: promise
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://ptarmigan:VkrP15a1@localhost:5432/ptarmigan';
+var connectionString = 'postgres://' + gopt.pgsql.user + ":" + gopt.pgsql.password;
+connectionString += "@" + gopt.pgsql.host + ":" + gopt.pgsql.port + "/" + gopt.pgsql.db;
+
+console.log("Initializing PostGIS database...");
+console.log("  PostGIS Host:      " + gopt.pgsql.host);
+console.log("  PostGIS Port:      " + gopt.pgsql.port);
+console.log("  PostGIS Database:  " + gopt.pgsql.db);
+console.log("  PostGIS Username:  " + gopt.pgsql.user);
+console.log("PostGIS database initialized.");
+
+
 var db = pgp(connectionString);
 
 module.exports = {

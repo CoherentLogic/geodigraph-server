@@ -1,3 +1,8 @@
+console.log("Geodigraph GeoLayers Server");
+console.log(" Copyright (C) 2017 Coherent Logic Development LLC");
+console.log("");
+console.log("Initializing Express application...");
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
