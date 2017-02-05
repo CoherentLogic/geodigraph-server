@@ -1,8 +1,8 @@
 {
 	"name": "geolayers2017",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"author" : "John P. Willis <jpw@coherent-logic.com>",
-	"description": "Geodigraph GeoLayers",
+	"description": "Geodigraph GeoLayers Server 2017",
 	"repository": "https://github.com/CoherentLogic/geodigraph-server/geodigraph-server.git",
 	"license": "AGPL-3.0",
 	"scripts": {
