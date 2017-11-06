@@ -36,7 +36,7 @@ module.exports = {
     	db.one("SELECT * FROM parcel_layers WHERE id='" + req.params.id + "'")
 	    .then(function(data) {
 			res.status(200)
-			    .json(data);
+		    .json(data);
 		    })
 		    .catch(function(err) {
 			return next(err);
@@ -44,7 +44,7 @@ module.exports = {
     },
 
     getRasterLayers: function(req, res, next) {
-    	var lyr = '[{"layer_extents":"","layer_color":"","layer_key_name":"","layer_public":"1","southwest_coordinates":{"0":{"0":""}},"written":"","layer_projection":"","url":"http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","layer_enabled":"1","layer_type":"raster","layer_name":"Open Street Map","layer_geom_field":"","layer_key_abbreviation":"","northeast_coordinates":{"0":{"0":""}},"name":"Open Street Map","id":"STREET","layer_boundary":"","layer_southwest_extent":"","layer_projection_name":"","layer_northeast_extent":"","layer_table":"","layer_key_field":"","attribution":"Map data &copy; OpenStreetMap contributors"}]';
+    	var lyr = '[{"layer_extents":"","layer_color":"","layer_key_name":"","layer_public":"1","southwest_coordinates":{"0":{"0":""}},"written":"","layer_projection":"","url":"http://10.5.1.11/osm_tiles/{z}/{x}/{y}.png","layer_enabled":"1","layer_type":"raster","layer_name":"Open Street Map","layer_geom_field":"","layer_key_abbreviation":"","northeast_coordinates":{"0":{"0":""}},"name":"Open Street Map","id":"STREET","layer_boundary":"","layer_southwest_extent":"","layer_projection_name":"","layer_northeast_extent":"","layer_table":"","layer_key_field":"","attribution":"Map data &copy; OpenStreetMap contributors"}]';
     	
     	res.status(200).json(JSON.parse(lyr));    	
     },

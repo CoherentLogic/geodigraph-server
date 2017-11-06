@@ -1,8 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../queries');
+var jwt = require('jwt-simple');
 
 console.log("Initializing route handlers...");
+
+
+router.post('/token/', function(req, res) {
+    console.log(req.body);
+});
+
 
 router.get('/vectorLayers', db.getVectorLayers);
 router.get('/vectorLayer/:id', db.getVectorLayer);
